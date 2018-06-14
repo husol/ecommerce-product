@@ -74,18 +74,18 @@ class Test
         echo "============================================================ Product B:\n";
         $productB = $this->initProductB();
         var_dump($productB);
-        $configurableProduct = new ConfigurableProduct();
+        $configurableProduct = new ConfigurableProduct("Iphone X");
         $configurableProduct->add($productA);
         $configurableProduct->add($productB);
         echo "============================================================ Configurable Product:\n";
-        var_dump($configurableProduct->getList());
+        var_dump($configurableProduct);
         echo "============================================================ Configurable Product after duplicated adding:\n";
         $configurableProduct->add($productA);
-        var_dump($configurableProduct->getList());
+        var_dump($configurableProduct);
         echo "============================================================ Configurable Product after adding product which has various attribute:\n";
         $productB->setPrice(120);
         $configurableProduct->add($productB);
-        var_dump($configurableProduct->getList());
+        var_dump($configurableProduct);
         die;
     }
 }

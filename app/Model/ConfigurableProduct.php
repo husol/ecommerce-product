@@ -4,7 +4,18 @@ namespace App\Model;
 
 class ConfigurableProduct
 {
+    protected $name;
     protected $product_list = [];
+
+    public function __construct($name)
+    {
+        $this->name = strval($name);
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
 
     public function getList()
     {
